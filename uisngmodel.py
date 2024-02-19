@@ -40,6 +40,7 @@ def classify_text(text):
     return label
 
 # Example usage
-article = input("Enter the article text: ")
+article = input("Enter the article text: ").strip().split('\n')
+article = ''.join(article)
 result = classify_text(article)
 print("The article is classified as:", result)
