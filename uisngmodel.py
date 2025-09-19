@@ -6,10 +6,10 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 import os
 
-# Get the directory of the current script
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Load the trained model
+
 model_path = os.path.join(current_dir, 'predictionmodel_sgd.pkl')
 model = joblib.load(model_path)
 

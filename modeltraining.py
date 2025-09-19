@@ -5,22 +5,22 @@ from sklearn.metrics import accuracy_score
 from scipy.sparse import csr_matrix
 from sklearn.linear_model import SGDClassifier
 
-# Get the current working directory
-current_dir = os.getcwd()
 
-# Define the relative paths to the data files
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+
 X_train_path = os.path.join(current_dir, 'Xtrain_sparse.pkl')
 Y_train_path = os.path.join(current_dir, 'Ytrain.pkl')
 X_test_path = os.path.join(current_dir, 'Xtest_sparse.pkl')
 Y_test_path = os.path.join(current_dir, 'Ytest.pkl')
 model_path = os.path.join(current_dir, 'predictionmodel_sgd.pkl')
 
-# Load the training data using joblib
+
 X_train = joblib.load(X_train_path)
 Y_train = joblib.load(Y_train_path)
 
 # Initialize the SGDClassifier
-model = SGDClassifier(loss='log_loss')  # Use loss='log_loss' for logistic regression
+model = SGDClassifier(loss='log_loss') 
 
 # Train the model
 model.fit(X_train, Y_train)
@@ -39,6 +39,7 @@ Y_test_prediction = model.predict(X_test)
 testing_data_accuracy = accuracy_score(Y_test, Y_test_prediction)
 print("Accuracy score on the testing data is:", testing_data_accuracy)
 
-# Save the trained model
+model_path = os.path.join(current_dir, "predictionmodel_sgd.pkl")
 joblib.dump(model, model_path)
-print("Done!")
+
+
