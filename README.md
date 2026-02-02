@@ -2,9 +2,9 @@
 
 A machine learning project that classifies news articles as "Real" or "Fake" using Natural Language Processing (NLP) techniques and Stochastic Gradient Descent (SGD) classification.
 
-## 📋 Project Overview
+## Project Overview
 
-This project implements an end-to-end machine learning pipeline to detect fake news articles. It preprocesses text data using NLP techniques, trains a classification model, and provides a simple interface for real-time predictions.
+This project implements an end-to-end machine learning pipeline to detect fake news articles. It preprocesses text data using NLP techniques, trains a classification model, and provides a simple interface for predictions.
 
 **Key Features:**
 - Text preprocessing with stemming and stop word removal
@@ -13,7 +13,7 @@ This project implements an end-to-end machine learning pipeline to detect fake n
 - Modular design with separate scripts for data preprocessing, training, and prediction
 - Persistent model storage for reuse
 
-## 🔧 Technical Implementation
+## Technical Implementation
 
 ### Architecture
 The project follows a modular architecture with three main components:
@@ -50,7 +50,7 @@ stemmed_content = stemmed_content.lower()
 
 # Stemming and stop word removal
 stemmed_content = [porter_stem.stem(word) for word in stemmed_content 
-                  if word not in stopwords.words('english')]
+                   if word not in stopwords.words('english')]
 ```
 
 #### 2. Feature Extraction
@@ -62,7 +62,7 @@ stemmed_content = [porter_stem.stem(word) for word in stemmed_content
 - **Loss Function**: Log loss (logistic regression)
 - **Validation**: Stratified train-test split
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 ```bash
@@ -105,14 +105,14 @@ Enter the article text: Scientists have discovered that the earth is actually fl
 The article is classified as: Fake
 ```
 
-## 📊 Model Performance
+## Model Performance
 
 The SGD classifier achieves high accuracy on both training and testing datasets. The model uses:
 - **Training/Testing Split**: 80/20
 - **Stratified Sampling**: Maintains label distribution
 - **Cross-validation**: Built-in model evaluation
 
-## 📁 Project Structure
+## Project Structure
 ```
 fake-news-detector/
 ├── Fake news prediction.py    # Data preprocessing pipeline
@@ -127,7 +127,7 @@ fake-news-detector/
 └── Ytest.pkl                 # Testing labels
 ```
 
-## 🛠️ Technical Skills Demonstrated
+## Technical Skills Demonstrated
 
 ### Machine Learning
 - **Supervised Learning**: Binary classification
@@ -153,22 +153,14 @@ fake-news-detector/
 - **Statistical Analysis**: Label distribution analysis
 - **Performance Metrics**: Accuracy evaluation
 
-## 🔮 Future Enhancements
+## Lessons Learned
 
-- **Model Improvements**: Test additional algorithms (Random Forest, Neural Networks)
-- **Feature Engineering**: Add n-grams, word embeddings
-- **Web Interface**: Flask/Django deployment
-- **Real-time Processing**: API for bulk predictions
-- **Performance Metrics**: Precision, recall, F1-score analysis
-
-## 🎯 Business Impact
-
-This project demonstrates practical applications in:
-- **Content Moderation**: Social media platforms
-- **Journalism**: News verification systems
-- **Education**: Media literacy tools
-- **Research**: Misinformation studies
-
----
-
-*This project showcases end-to-end machine learning development, from data preprocessing to model deployment, with a focus on practical NLP applications and software engineering best practices.*
+### Technical
+1. The importance of data preprocessing in machine learning pipelines
+2. Understanding the TF-IDF vectorizer and its role in feature extraction.
+3. The significance of selecting the right machine learning algorithm, including hyperparameter tuning.
+ 
+### Non-Technical
+1. Problem-solving and breaking down components into modular scripts & maintainable code.
+2. Capturing detailed documentation for future scalability or for contributors.
+3. Learned interpretative debugging in machine workflows.
